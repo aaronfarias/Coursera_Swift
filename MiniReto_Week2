@@ -1,0 +1,38 @@
+
+
+import UIKit
+
+/*
+Aaron Farias Segovia _ Coursera _ Week 2  _ MINIRETO.
+INSTRUCCIONES
+Imprimir los números de 0 a 100.
+Reglas:
+1. Si es divisible entre 5 imprimir el número seguido de "#Bingo!!!"
+2. Si el número es par imprimir el número seguido de "#par"
+3. Si el número es impar imprimir el número seguido de "#impar"
+4. Si el número se encuentra en un rango del 30 al 40 imprimir el número seguido de "#VivaSwift!!!"
+*/
+
+
+var resultado : String
+var numeros = 1...100
+print(numeros.count)
+
+
+for numero in numeros{
+    resultado = ""
+    
+    if numero % 5 == 0
+    {resultado = resultado + "#Bingo!"}
+    
+    if numero % 2 == 0
+    {resultado = resultado + "#Par"}
+    else
+    {resultado = resultado + "#impar"}
+    
+    if numero >= 30 && numero <= 40
+    {resultado = resultado + "#VivaSwift"}
+    
+    print("\(numero)\(resultado)")
+}
+
