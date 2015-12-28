@@ -1,0 +1,67 @@
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var str = "Hello, playground"
+
+
+import Foundation
+
+
+enum velocidades: Int{
+    case Apagado = 0,VelBaja = 20,VelMedia = 50,VelAlta = 120, velInicial
+    init(var velInicial:velocidades)
+    {
+        velInicial = velocidades.Apagado
+        self = .velInicial
+    }
+}
+
+class Auto
+{
+    var velocidad:velocidades
+    
+    init()
+    {
+        self.velocidad = velocidades.velInicial
+    }
+    
+    func cambioDeVelocidad() ->String
+    {
+        if velocidad == velocidades.velInicial
+        {
+            velocidad = velocidades.Apagado
+        }
+        else if velocidad == velocidades.Apagado
+        {
+            velocidad = velocidades.VelBaja
+        }
+        else if velocidad == velocidades.VelBaja
+        {
+            velocidad = velocidades.VelMedia
+        }
+        else if velocidad == velocidades.VelMedia
+        {
+            
+            velocidad = velocidades.VelAlta
+        }
+        else if velocidad == velocidades.VelAlta
+        {
+            velocidad = velocidades.VelMedia
+        }
+        return  String(velocidad)
+    }
+}
+
+
+var _Vw = Auto()
+var interacciones =  1...20
+
+
+
+for inter in interacciones
+{
+    _Vw.cambioDeVelocidad()
+    print("\(inter).-    \(_Vw.velocidad.rawValue),   \(_Vw.velocidad)  ")
+}
+
